@@ -15,6 +15,10 @@ public:
 private:
     sf::RenderWindow *main_win;
 
+    sf::Texture earth;
+
+    sf::Texture background;
+
     sf::Event mw_event;
 
     sf::Font dejavu;

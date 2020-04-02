@@ -1,5 +1,7 @@
 #include "game.hpp"
 
+#include <iostream>
+
 Game::Game() {
     sf::Image mw_icon;
     if(!(mw_icon.loadFromFile("snake.png"))) exit(1);
@@ -10,8 +12,12 @@ Game::Game() {
 
     if(!(dejavu.loadFromFile("DejaVuSansMono.ttf"))) exit(2);
 
+    if(!(earth.loadFromFile("back.png"))) exit(5);
+
+    if(!(background.loadFromFile("background.png"))) exit(6);
+
     mw_game.snake_init();
-    mw_game.setPosition(sf::Vector2f(19, 19));
+    mw_game.setPosition(sf::Vector2f(18, 18));
 }
 
 Game::~Game() {
@@ -32,6 +38,8 @@ void Game::Run() {
                     case sf::Keyboard::Right: mw_game.turn(RIGHT); break;
                     case sf::Keyboard::Down: mw_game.turn(DOWN); break;
                     case sf::Keyboard::Left: mw_game.turn(LEFT); break;
+
+                    case sf::Keyboard::F2: mw_game.snake_init(); break;
                     default: break;
                 }
             }
@@ -43,6 +51,35 @@ void Game::Run() {
         }
 
         main_win->clear();
+
+        sf::Sprite back(background);
+        back.setPosition(0, 0);
+
+        main_win->draw(back);
+
+        sf::Sprite earth_back;
+
+        earth_back.setTexture(earth);
+        earth_back.setScale(0.48828125, 0.48828125);
+        earth_back.setPosition(20, 20);
+
+        main_win->draw(earth_back);
+
+        sf::RectangleShape line;
+        line.setSize(sf::Vector2f(500, 1));
+        line.setFillColor(sf::Color(91, 74, 58));
+
+        for(int i{1}; i < 25; i++){
+            line.setPosition(20, 20 + 20 * i);
+            main_win->draw(line);
+        }
+
+        line.setSize(sf::Vector2f(1, 500));
+
+        for(int i{1}; i < 25; i++){
+            line.setPosition(20 + 20 * i, 20);
+            main_win->draw(line);
+        }
 
         main_win->draw(mw_game);
 

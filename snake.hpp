@@ -15,6 +15,8 @@ public:
     Snake();
     ~Snake();
 
+    int get_len();
+
     void snake_init();
 
     void next_step();
@@ -36,12 +38,16 @@ private:
 
     sf::Texture eat_texture;
 
+    sf::Font dejavu;
+
     int snake_len;
 
     int direct;
 
     bool can_turn;
     bool resized;
+
+    bool game_over;
 };
 
 #endif // SNAKE_HPP
