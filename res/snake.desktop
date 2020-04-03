@@ -1,0 +1,29 @@
+[Desktop Entry]
+
+Version=1.0
+
+Encoding=UTF-8
+
+Type=Application
+
+Categories=Game
+
+Exec=/usr/bin/snake
+
+Terminal=false
+
+Icon=/usr/share/snake/res/icon.svg
+
+StartupNotify=true
+
+Name=Snake
+
+Name[ru]=Змейка
+
+Comment=A simple Snake, written on C++ & SFML
+
+Comment[ru]=Простая Змейка, написанные на C++ и SFML
+
+NoDisplay=false
+
+Hidden=false
