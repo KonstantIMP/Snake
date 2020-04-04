@@ -24,6 +24,8 @@
 
     Clone https://github.com/KonstantinProgger/my_archive and run latest .exe
     
+    Or download it from SourceForge https://sourceforge.net/projects/simple-snake/
+    
     If you have error with VCRUNTIVE140_1.dll download latest VC Redist from this https://aka.ms/vs/16/release/vc_redist.x64.exe (x64 system only)
 
 # Icons
